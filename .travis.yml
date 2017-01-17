@@ -1,5 +1,6 @@
 language: php
-
+php:
+    - '7.x'
 before_script:
     - composer install
 
