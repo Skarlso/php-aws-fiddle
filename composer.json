@@ -1,6 +1,7 @@
 {
     "require": {
-        "aws/aws-sdk-php":"*"
+        "aws/aws-sdk-php": "*",
+        "monolog/monolog": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "5.5.*"
