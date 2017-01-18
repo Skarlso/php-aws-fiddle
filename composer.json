@@ -1,9 +1,16 @@
 {
+    "name": "Fiddle",
     "require": {
         "aws/aws-sdk-php": "*",
         "monolog/monolog": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "5.5.*"
-    }
+    },
+    "autoload": {
+        "psr-4": {
+            "Fiddle\\": "src/"
+        }
+    },
+    "bin": ["bin/fiddle"]
 }
