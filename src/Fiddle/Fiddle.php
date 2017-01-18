@@ -1,6 +1,5 @@
 <?php
 namespace Fiddle;
-require 'vendor/autoload.php';
 
 use Monolog\Logger;
 

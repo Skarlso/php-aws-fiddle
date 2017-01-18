@@ -9,7 +9,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Fiddle\\": "src/"
+            "Fiddle\\": "src/Fiddle/"
         }
     },
     "bin": ["bin/fiddle"]
