@@ -2,12 +2,13 @@
 namespace Fiddle\Server;
 
 use Monolog\Logger;
+use Fiddle\Client\Client;
 
 class ServerHandler {
     protected $log;
     protected $client;
 
-    public function __construct($client) {
+    public function __construct(Client $client) {
         $this->log = new Logger("main");
         $this->client = $client;
     }

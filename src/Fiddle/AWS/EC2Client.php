@@ -1,7 +1,9 @@
 <?php
 namespace Fiddle\AWS;
 
-class EC2Client {
+use Fiddle\Client\Client;
+
+class EC2Client implements Client {
     protected $sdk;
     public function __construct() {
         $this->sharedConfig = [

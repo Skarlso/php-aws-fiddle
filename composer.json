@@ -12,7 +12,9 @@
         "psr-4": {
             "Fiddle\\Server\\": "src/Fiddle/Server",
             "Fiddle\\AWS\\": "src/Fiddle/AWS",
-            "Fiddle\\Test\\": "tests/"
+            "Fiddle\\Client\\": "src/Fiddle/Client",
+            "Fiddle\\Test\\Server\\": "tests/Fiddle/Server",
+            "Fiddle\\Test\\MockClient\\": "tests/Fiddle/MockClient"
         }
     },
     "bin": ["bin/fiddle"]
