@@ -1,5 +1,16 @@
 #!/usr/local/opt/php70/bin/php
 <?php
 require_once 'vendor/autoload.php';
-$fiddle = new Fiddle\Fiddle();
-$fiddle->start();
+
+$command = $argc > 1 ? $argv[1] : "";
+$fiddle = new Fiddle\EC2\EC2Handler();
+
+switch ($command) {
+    case 'create-ec2':
+        $fiddle->create_ec2();
+        break;
+
+    default:
+        printf("Unknown command: %s\n", $command);
+        break;
+}

@@ -1,9 +1,9 @@
 <?php
-namespace Fiddle;
+namespace Fiddle\EC2;
 
 use Monolog\Logger;
 
-class Fiddle {
+class EC2Handler {
     protected $log;
     protected $sharedConfig;
     protected $sdk;
@@ -17,8 +17,8 @@ class Fiddle {
         $this->sdk = new \Aws\Sdk($this->sharedConfig);
     }
 
-    public function start() {
+    public function create_ec2() {
         $this->log->info('Initiating AWS S3 client.');
-        $s3 = $this->sdk->createS3();
+        $ec2_client = $this->sdk->createEc2();
     }
 }
