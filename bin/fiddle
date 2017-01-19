@@ -1,18 +1,18 @@
 #!/usr/local/bin/php
 <?php
-use DI\ContainerBuilder;
 require_once 'vendor/autoload.php';
+use DI\ContainerBuilder;
 
 $command = $argc > 1 ? $argv[1] : "";
-$container = DI\ContainerBuilder::buildDevContainer();
-$awsClient = new Fiddle\AWS\EC2Client();
-$fiddle = new Fiddle\Server\ServerHandler($awsClient);
+$builder = new DI\ContainerBuilder();
+$builder->addDefinitions(__DIR__ . '/config.php');
+$container = $builder->build();
+$fiddle = $container->get("Fiddle\Server\ServerHandler");
 
 switch ($command) {
     case 'create-server':
         $fiddle->createServer();
         break;
-
     default:
         printf("Unknown command: %s\n", $command);
         break;
