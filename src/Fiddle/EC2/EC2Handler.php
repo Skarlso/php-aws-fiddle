@@ -18,7 +18,7 @@ class EC2Handler {
     }
 
     public function create_ec2() {
-        $this->log->info('Initiating AWS S3 client.');
+        $this->log->info('Initiating AWS EC2 client.');
         $ec2_client = $this->sdk->createEc2();
     }
 }

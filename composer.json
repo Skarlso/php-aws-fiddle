@@ -9,7 +9,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Fiddle\\EC2\\": "src/Fiddle/EC2"
+            "Fiddle\\EC2\\": "src/Fiddle/EC2",
+            "Fiddle\\Test\\": "tests/"
         }
     },
     "bin": ["bin/fiddle"]
