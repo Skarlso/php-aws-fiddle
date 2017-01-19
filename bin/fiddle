@@ -1,13 +1,16 @@
-#!/usr/local/opt/php70/bin/php
+#!/usr/local/bin/php
 <?php
+use DI\ContainerBuilder;
 require_once 'vendor/autoload.php';
 
 $command = $argc > 1 ? $argv[1] : "";
-$fiddle = new Fiddle\EC2\EC2Handler();
+$container = DI\ContainerBuilder::buildDevContainer();
+$awsClient = new Fiddle\AWS\EC2Client();
+$fiddle = new Fiddle\Server\ServerHandler($awsClient);
 
 switch ($command) {
-    case 'create-ec2':
-        $fiddle->create_ec2();
+    case 'create-server':
+        $fiddle->createServer();
         break;
 
     default:

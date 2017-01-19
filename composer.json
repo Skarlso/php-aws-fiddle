@@ -2,14 +2,16 @@
     "name": "Fiddle",
     "require": {
         "aws/aws-sdk-php": "*",
-        "monolog/monolog": "*"
+        "monolog/monolog": "*",
+        "php-di/php-di": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "5.5.*"
     },
     "autoload": {
         "psr-4": {
-            "Fiddle\\EC2\\": "src/Fiddle/EC2",
+            "Fiddle\\Server\\": "src/Fiddle/Server",
+            "Fiddle\\AWS\\": "src/Fiddle/AWS",
             "Fiddle\\Test\\": "tests/"
         }
     },
