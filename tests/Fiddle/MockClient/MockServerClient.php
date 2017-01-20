@@ -2,14 +2,14 @@
 
 namespace Fiddle\Test\MockClient;
 
-use Fiddle\Client\Client;
+use Fiddle\Client\ServerClient;
 
-class MockClient implements Client {
+class MockServerClient implements ServerClient {
     public function __construct() {
 
     }
 
-    public function getClient() {
+    public function getServerClient() {
         printf("Mock client getClient was called.");
         return true;
     }
