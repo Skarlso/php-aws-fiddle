@@ -13,9 +13,9 @@ class StackHandler {
         $this->client = $client;
     }
 
-    public function createStack() {
+    public function createStack($name) {
         $this->log->info('Creating Cloud Formation client.');
         $cf = $this->client->getStackClient();
-        $this->log->info('Initiating stack creation.');
+        $this->log->info("Initiating stack creation with name: $name");
     }
 }

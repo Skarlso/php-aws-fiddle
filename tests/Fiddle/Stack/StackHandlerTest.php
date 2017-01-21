@@ -9,6 +9,6 @@ class StackHandlerTest extends TestCase {
     public function testFirstTest() {
         $mockClient = new MockStackClient();
         $handler = new StackHandler($mockClient);
-        $handler->createStack();
+        $handler->createStack("test");
     }
 }

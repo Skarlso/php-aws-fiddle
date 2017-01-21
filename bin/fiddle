@@ -3,15 +3,16 @@
 require_once 'vendor/autoload.php';
 use DI\ContainerBuilder;
 
-$command = $argc > 1 ? $argv[1] : "";
 $builder = new DI\ContainerBuilder();
 $builder->addDefinitions(__DIR__ . '/../cfg/config.php');
 $container = $builder->build();
 $stack = $container->get("Fiddle\Stack\StackHandler");
 
-switch ($command) {
+$options = getopt("c:n::");
+switch ($options["c"]) {
     case 'create':
-        $stack->createStack();
+        array_key_exists("n", $options) ?: $options["n"] = "fiddle";
+        $stack->createStack($options["n"]);
         break;
     default:
         printf("Unknown command: %s\n", $command);
