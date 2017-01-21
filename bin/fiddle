@@ -7,11 +7,11 @@ $command = $argc > 1 ? $argv[1] : "";
 $builder = new DI\ContainerBuilder();
 $builder->addDefinitions(__DIR__ . '/config.php');
 $container = $builder->build();
-$fiddle = $container->get("Fiddle\Server\ServerHandler");
+$stack = $container->get("Fiddle\Stack\StackHandler");
 
 switch ($command) {
     case 'create':
-        $fiddle->createServer();
+        $stack->createStack();
         break;
     default:
         printf("Unknown command: %s\n", $command);

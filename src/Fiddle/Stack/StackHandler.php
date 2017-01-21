@@ -13,7 +13,7 @@ class StackHandler {
         $this->client = $client;
     }
 
-    public function createServer() {
+    public function createStack() {
         $this->log->info('Creating Cloud Formation client.');
         $cf = $this->client->getStackClient();
         $this->log->info('Initiating stack creation.');
