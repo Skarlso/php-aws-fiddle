@@ -10,7 +10,7 @@ $container = $builder->build();
 $fiddle = $container->get("Fiddle\Server\ServerHandler");
 
 switch ($command) {
-    case 'create-server':
+    case 'create':
         $fiddle->createServer();
         break;
     default:

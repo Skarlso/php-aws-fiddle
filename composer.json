@@ -13,6 +13,7 @@
             "Fiddle\\Server\\": "src/Fiddle/Server",
             "Fiddle\\AWS\\": "src/Fiddle/AWS",
             "Fiddle\\Client\\": "src/Fiddle/Client",
+            "Fiddle\\Stack\\": "src/Fiddle/Stack",
             "Fiddle\\Test\\Server\\": "tests/Fiddle/Server",
             "Fiddle\\Test\\MockClient\\": "tests/Fiddle/MockClient"
         }
