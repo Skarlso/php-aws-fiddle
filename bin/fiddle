@@ -5,7 +5,7 @@ use DI\ContainerBuilder;
 
 $command = $argc > 1 ? $argv[1] : "";
 $builder = new DI\ContainerBuilder();
-$builder->addDefinitions(__DIR__ . '/config.php');
+$builder->addDefinitions(__DIR__ . '/../cfg/config.php');
 $container = $builder->build();
 $stack = $container->get("Fiddle\Stack\StackHandler");
 
