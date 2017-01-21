@@ -23,4 +23,9 @@ class CreateCommand implements Command
         $stack = $this->container->get("Fiddle\Stack\StackHandler");
         $stack->createStack($params["name"]);
     }
+
+    public function help()
+    {
+        printf("Zis iz my help.\n");
+    }
 }

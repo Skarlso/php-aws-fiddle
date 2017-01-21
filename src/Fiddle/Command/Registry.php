@@ -21,6 +21,6 @@ class Registry
 
     public function listCommands()
     {
-        return array_keys($this->commandRegistry);
+        return array_values($this->commandRegistry);
     }
 }

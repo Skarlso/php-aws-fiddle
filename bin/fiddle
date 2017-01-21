@@ -12,7 +12,10 @@ $registry = new \Fiddle\Command\Registry();
 $create = new \Fiddle\Command\CreateCommand($container);
 $registry->addCommand($create->getName(), $create);
 
-print_r($registry->listCommands());
+$display = function($command) {
+    $command->help();
+};
+array_map($display, $registry->listCommands());
 
 $command = $argc > 1 ? $argv[1] : "";
 
