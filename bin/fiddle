@@ -6,15 +6,22 @@ use DI\ContainerBuilder;
 $builder = new DI\ContainerBuilder();
 $builder->addDefinitions(__DIR__ . '/../cfg/config.php');
 $container = $builder->build();
-$stack = $container->get("Fiddle\Stack\StackHandler");
 
-$options = getopt("c:n::");
-switch ($options["c"]) {
-    case 'create':
-        array_key_exists("n", $options) ?: $options["n"] = "fiddle";
-        $stack->createStack($options["n"]);
-        break;
-    default:
-        printf("Unknown command: %s\n", $command);
-        break;
+
+$registry = new \Fiddle\Command\Registry();
+$create = new \Fiddle\Command\CreateCommand($container);
+$registry->addCommand($create->getName(), $create);
+
+print_r($registry->listCommands());
+
+$command = $argc > 1 ? $argv[1] : "";
+
+$c = $registry->getCommand($command);
+
+if (is_null($c)) {
+    printf("Command not available: %s\n", $command);
+    die(1);
 }
+
+$params["name"] = "fiddle";
+$c->execute($params);
