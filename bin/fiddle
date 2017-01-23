@@ -26,5 +26,6 @@ if (is_null($c)) {
     die(1);
 }
 
+// Pass in the rest of the arguments here
 $params["name"] = "fiddle";
 $c->execute($params);
