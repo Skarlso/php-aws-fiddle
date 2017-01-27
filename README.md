@@ -1,3 +1,3 @@
-# Fiddle - CloudFormation Hosting
+# Fiddle - AWS Hosting
 
 Some fiddling with AWS + PHP.
