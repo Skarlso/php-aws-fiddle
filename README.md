@@ -1,3 +1,3 @@
-# Fiddle - AWS Hosting
+# Fiddle - AWS Hosting
 
 Some fiddling with AWS + PHP.
